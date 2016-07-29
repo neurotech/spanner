@@ -4,7 +4,11 @@
   "description": "An application to help keep the bolts tight on your Edumate instance.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron .",
+    "build": "npm run build:osx && npm run build:linux && npm run build:windows",
+    "build:osx": "electron-packager . Picnic --overwrite --asar --out=dist --ignore='^src$' --prune --platform=darwin --arch=x64 --app-version=$npm_package_version",
+    "build:linux": "electron-packager . Picnic --overwrite --out=dist --ignore='^src$' --prune --platform=linux --arch=x64 --app-version=$npm_package_version",
+    "build:windows": "electron-packager . Picnic --overwrite --asar --out=dist --ignore='^src$' --prune --platform=win32 --arch=ia32 --app-version=$npm_package_version"
   },
   "repository": {
     "type": "git",
@@ -20,5 +24,16 @@
   "bugs": {
     "url": "https://github.com/neurotech/spanner/issues"
   },
-  "homepage": "https://github.com/neurotech/spanner#readme"
+  "homepage": "https://github.com/neurotech/spanner#readme",
+  "dependencies": {
+    "electron-config": "0.2.1",
+    "electron-debug": "1.0.1",
+    "electron-packager": "7.3.0"
+  },
+  "devDependencies": {
+    "devtron": "1.2.1",
+    "electron-packager": "7.3.0",
+    "electron-prebuilt": "1.3.1",
+    "semistandard": "8.0.0"
+  }
 }
