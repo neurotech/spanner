@@ -1,6 +1,6 @@
 # spanner
 
-> An application to help keep the bolts tight on your Edumate instance.
+> :wrench: An application to help keep the bolts tight on your Edumate instance.
 
 ## Usage
 
