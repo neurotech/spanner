@@ -1,0 +1,20 @@
+section.block(v-cloak)
+  button.button(v-on:click="fetchAllReports" v-show="reportName.length > 1") Update
+  input(v-model="reportName" placeholder="Search for a report" autofocus).reports-filter
+
+.reports-list-empty(v-show="reportName.length < 1") Use the search box above to search for a report.
+
+.reports-flex
+  .reports-list(v-show="reportName.length >= 1")
+    div(v-for="report in reports | filterBy reportName in 'reportName' | orderBy 'reportName'").report-item
+      div(class="report-type-{{convertToClass(report.kind)}}") {{report.kind}}
+      h2 {{report.reportName}}
+      p {{report.description || 'No description provided.'}}
+      .report-meta.
+        #[span.dimmed Location:]
+        #[span.emphasis Setup]
+        #[span.dimmed.arrow &#8594;]
+        #[span.emphasis Reports]
+        #[span.dimmed.arrow &#8594;]
+        #[span.emphasis {{report.module}} Reports]
+        #[span(v-if="report.heading").dimmed.arrow &#8594; #[span.emphasis {{report.heading}}]]
