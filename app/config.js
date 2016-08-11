@@ -21,6 +21,17 @@ module.exports = new Config({
     },
     lastUpdated: {
       format: 'Do MMMM [at] h:mm A'
+    },
+    resources: {
+      edumate: {
+        production: false,
+        test: false
+      },
+      exchange: {
+        production: false,
+        test: false,
+        beta: false
+      }
     }
   }
 });
