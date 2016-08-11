@@ -1,0 +1,85 @@
+.col-05 {
+  max-width: 05%;
+}
+
+.col-10 {
+  max-width: 10%;
+}
+
+.col-15 {
+  max-width: 15%;
+}
+
+.col-20 {
+  max-width: 20%;
+}
+
+.col-25 {
+  max-width: 25%;
+}
+
+.col-30 {
+  max-width: 30%;
+}
+
+.col-35 {
+  max-width: 35%;
+}
+
+.col-40 {
+  max-width: 40%;
+}
+
+.col-45 {
+  max-width: 45%;
+}
+
+.col-50 {
+  max-width: 50%;
+}
+
+.col-55 {
+  max-width: 55%;
+}
+
+.col-60 {
+  max-width: 60%;
+}
+
+.col-65 {
+  max-width: 65%;
+}
+
+.col-70 {
+  max-width: 70%;
+}
+
+.col-75 {
+  max-width: 75%;
+}
+
+.col-80 {
+  max-width: 80%;
+}
+
+.col-85 {
+  max-width: 85%;
+}
+
+.col-90 {
+  max-width: 90%;
+}
+
+.col-95 {
+  max-width: 95%;
+}
+
+.col-100 {
+  max-width: 100%;
+}
+
+@media (min-width: 30em) and (max-width: 65em) {
+  .col-50 {
+    max-width: 100%;
+  }
+}
