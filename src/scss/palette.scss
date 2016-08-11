@@ -1,0 +1,39 @@
+$base-background: #EFEFEF;
+$text: #323c5f;
+$pale-text: lighten($text, 65%);
+
+// Primary
+$yellow-base: #FFD93B;
+$red-base: #FF4E31;
+$blue-base: #0798FF;
+$green-base: #67DA75;
+$purple-base: #8367DA;
+$teal-base: #60EAE3;
+
+// Top Stripe
+$top-stripe-bg: #5365A4;
+
+// Navigation
+$nav-bg: #84A0FF;
+$nav-active-bg: #6A86E2;
+$nav-active-border: #FFD01D;
+$nav-active-text: #ffffff;
+$nav-hover-bg: #9FB5FF;
+$nav-text: rgba(#ffffff, 0.88);
+
+// Blocks
+$block-border: #bdbdbd;
+$block-background: #ffffff;
+$block-text: #7E7E7E;
+$block-header: $block-text;
+$block-subtitle: #bdbdbd;
+$block-strong: #525252;
+$block-separator: #D4D4D4;
+
+// Buttons
+$button-border: #718ae0;
+$button-background: $nav-bg;
+$button-text: white;
+
+// Stickers
+$sticker-text: white;
