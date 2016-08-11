@@ -2,16 +2,46 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Electron boilerplate</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Spanner</title>
+    <link rel="stylesheet" href="vendor/normalize.css">
+    <link rel="stylesheet" href="css/index.css">
   </head>
   <body>
-    <div class="container">
-      <header>
-        <h1>Electron boilerplate</h1>
-      </header>
-      <section class="main"></section>
-      <footer></footer>
+    <div id="app">
+      <div id="flex">
+        <div id="nav">
+          <div class="nav-spacer"></div>
+          <div class="nav-list">
+            <a href="#" v-on:click="route('home')" class="nav-block">
+              <div class="nav-item {{ currentView === 'home' ? 'active' : '' }}">Home</div>
+            </a>
+            <a href="#" v-on:click="route('issues')" class="nav-block">
+              <div class="nav-item {{ currentView === 'issues' ? 'active' : '' }}">Issues</div>
+              <div v-if="issueCount > 0" class="issue-counter" transition="issue-counter">{{issueCount}}</div>
+            </a>
+            <a href="#" v-on:click="route('status')" class="nav-block">
+              <div class="nav-item {{ currentView === 'status' ? 'active' : '' }}">Status</div>
+            </a>
+            <a href="#" v-on:click="route('reports')" class="nav-block">
+              <div class="nav-item {{ currentView === 'reports' ? 'active' : '' }}">Reports</div>
+            </a>
+            <a href="#" v-on:click="route('staff')" class="nav-block">
+              <div class="nav-item {{ currentView === 'staff' ? 'active' : '' }}">Staff</div>
+            </a>
+          </div>
+        </div>
+
+        <div id="content">
+          <div id="flash" class="error" v-if="missingConfig != 'OK'">
+            <h1>Error: Missing Config Items</h1>
+          </div>
+          <header class="top-stripe"></header>
+          <div id="switcher">
+            <component :is="currentView"></component>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
+  <script src="index.js"></script>
 </html>
