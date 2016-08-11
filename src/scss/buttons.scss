@@ -1,0 +1,29 @@
+.button {
+  margin: $button-margin-unit $button-margin-unit 0 0;
+  padding: $button-padding-unit;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: $button-background;
+  border: $border-width-unit solid $button-border;
+  border-radius: $border-radius-unit / 2;
+  font-size: $font-size-unit * 1.2;
+  font-family: 'Brandon Regular';
+  letter-spacing: $border-width-unit;
+  text-transform: uppercase;
+  color: $button-text;
+
+  &:hover {
+    background-color: lighten($button-background, 3%);
+    border-color: lighten($button-border, 3%);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    background-color: darken($button-background, 2%);
+    border-color: darken($button-border, 2%);
+  }
+}
