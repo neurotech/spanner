@@ -1,0 +1,16 @@
+section.block(v-cloak).col-50
+  .block-header Staff Away
+  button.button(v-on:click="fetchAllStaffAway") Update
+
+  div.staff-away
+    div#staff-away-item.now
+      .count {{staffAway.now.length}}
+      .away-type now
+
+    div#staff-away-item.soon
+      .count {{staffAway.soon.length}}
+      .away-type soon
+
+    div#staff-away-item.all-day
+      .count {{staffAway.allDay.length}}
+      .away-type all day
