@@ -1,0 +1,58 @@
+.status {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.edumate-status, .exchange-status {
+  float: left;
+  margin: $spacing-unit 0 $spacing-unit 0;
+}
+
+.status-item {
+  float: left;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.status-icon {
+  float: left;
+  margin: 0 1em 0 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+.status-item h2 {
+  margin: 0;
+  font-family: 'Brandon Medium';
+  color: $block-text;
+}
+
+.status-item h3 {
+  margin: 0;
+  font-family: 'Brandon Light';
+  color: $block-subtitle;
+}
+
+.unknown {
+  background-color: $pale-text;
+}
+
+.checking {
+  background-color: $yellow-base;
+  border: 2px solid desaturate(darken($yellow-base, 10%), 10%);
+  animation: checking 1s infinite;
+}
+
+.up {
+  background-color: $green-base;
+  border: 2px solid desaturate(darken($green-base, 10%), 10%);
+  animation: up 0.3s;
+}
+
+.down {
+  background-color: $red-base;
+  border: 2px solid desaturate(darken($red-base, 10%), 10%);
+  animation: down 0.5s infinite;
+}
