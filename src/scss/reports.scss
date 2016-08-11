@@ -1,0 +1,122 @@
+.reports-filter {
+  width: 200px;
+  padding: $spacing-unit * 1.2;
+  font-size: $font-size-unit * 1.2;
+  background-color: rgba($block-separator, 0.33);
+  border: 2px solid $block-border;
+  color: $block-header;
+  border-radius: $border-radius-unit;
+  line-height: $font-size-unit;
+  &:focus {
+    outline: none;
+    background-color: rgba($block-separator, 0.20);
+    border: 2px solid $nav-bg;
+    color: $text;
+  }
+}
+
+.reports-list-empty {
+  padding: $spacing-unit * 1.5 0 0 $spacing-unit;
+  font-family: 'Brandon Light Italics';
+  font-size: $font-size-unit * 1.4;
+}
+
+.reports-flex {
+  width: 100%;
+  position: relative;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+}
+
+.reports-list {
+  width: 100%;
+  overflow: auto;
+  position: absolute;
+  flex: 1;
+  margin: $spacing-unit 0 0 0;
+  padding: $spacing-unit 0 0 0;
+}
+
+.report-item {
+  margin: 0 0 $spacing-unit 0;
+  padding: $spacing-unit;
+  background-color: $block-background;
+  border: $border-width-unit solid $block-border;
+  border-radius: $border-radius-unit;
+}
+
+h2 {
+  margin: 0;
+  font-family: 'Brandon Medium';
+  font-size: $font-size-unit * 2.2;
+  color: $block-strong;
+}
+
+.report-meta {
+  border-top: 1px dashed $block-separator;
+  padding-top: $spacing-unit * 0.5;
+  margin: $spacing-unit * 0.5 0 0 0;
+  font-size: $font-size-unit * 1.2;
+}
+
+[class^="report-type-"] {
+  float: right;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 4px 9px;
+  font-family: 'Brandon Medium';
+  font-size: $font-size-unit;
+  line-height: 1.35;
+  letter-spacing: 1px;
+  color: $sticker-text;
+  border-radius: $border-radius-unit * 0.5;
+  opacity: 0.75;
+}
+
+.report-type-module {
+  color: $purple-base;
+  border: $border-width-unit solid $purple-base;
+  border-top-width: $border-width-unit * 3;
+}
+
+.report-type-correspondence {
+  color: $red-base;
+  border: $border-width-unit solid $red-base;
+  border-top-width: $border-width-unit * 3;
+}
+
+.report-type-job {
+  color: $yellow-base;
+  border: $border-width-unit solid $yellow-base;
+  border-top-width: $border-width-unit * 3;
+}
+
+.report-meta .dimmed {
+  color: $block-subtitle;
+}
+
+.report-meta .arrow {
+  margin: 0 $spacing-unit * 0.12;
+}
+
+.report-meta .pipe {
+  color: rgba($block-separator, 0.5);
+}
+
+.report-meta .emphasis {
+  color: $block-text;
+}
+
+h3 {
+  margin: 0;
+  font-family: 'Brandon Light';
+  font-size: $font-size-unit * 1.8;
+}
+
+p {
+  margin: $spacing-unit * 0.3 0 0 0;
+  font-family: 'Brandon Regular';
+  font-size: $font-size-unit * 1.4;
+  line-height: $font-size-unit * 1.5;
+}
