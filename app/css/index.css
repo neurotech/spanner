@@ -1,0 +1,509 @@
+.col-05 {
+  max-width: 05%; }
+
+.col-10 {
+  max-width: 10%; }
+
+.col-15 {
+  max-width: 15%; }
+
+.col-20 {
+  max-width: 20%; }
+
+.col-25 {
+  max-width: 25%; }
+
+.col-30 {
+  max-width: 30%; }
+
+.col-35 {
+  max-width: 35%; }
+
+.col-40 {
+  max-width: 40%; }
+
+.col-45 {
+  max-width: 45%; }
+
+.col-50 {
+  max-width: 50%; }
+
+.col-55 {
+  max-width: 55%; }
+
+.col-60 {
+  max-width: 60%; }
+
+.col-65 {
+  max-width: 65%; }
+
+.col-70 {
+  max-width: 70%; }
+
+.col-75 {
+  max-width: 75%; }
+
+.col-80 {
+  max-width: 80%; }
+
+.col-85 {
+  max-width: 85%; }
+
+.col-90 {
+  max-width: 90%; }
+
+.col-95 {
+  max-width: 95%; }
+
+.col-100 {
+  max-width: 100%; }
+
+@media (min-width: 30em) and (max-width: 65em) {
+  .col-50 {
+    max-width: 100%; } }
+
+@font-face {
+  font-family: 'Brandon Black';
+  src: url("../fonts/Brandon_Black.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'Brandon Black Italics';
+  src: url("../fonts/Brandon_Black_Italics.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'Brandon Bold';
+  src: url("../fonts/Brandon_Bold.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'Brandon Bold Italics';
+  src: url("../fonts/Brandon_Bold_Italics.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'Brandon Light';
+  src: url("../fonts/Brandon_Light.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'Brandon Light Italics';
+  src: url("../fonts/Brandon_Light_Italics.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'Brandon Medium';
+  src: url("../fonts/Brandon_Medium.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'Brandon Medium Italics';
+  src: url("../fonts/Brandon_Medium_Italics.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'Brandon Regular';
+  src: url("../fonts/Brandon_Regular.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'Brandon Regular Italics';
+  src: url("../fonts/Brandon_Regular_Italics.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'Brandon Thin';
+  src: url("../fonts/Brandon_Thin.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'Brandon Thin Italics';
+  src: url("../fonts/Brandon_Thin_Italics.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'Fira Mono';
+  src: url("../fonts/FiraMono-Regular.otf") format("opentype"); }
+
+[v-cloak] {
+  display: none; }
+
+html, body {
+  padding: 0;
+  margin: 0; }
+
+body {
+  background: #EFEFEF;
+  font-family: 'Brandon Regular';
+  color: #7E7E7E;
+  font-size: 1em; }
+
+#app {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column; }
+
+#flex {
+  flex: 1;
+  display: flex; }
+
+#switcher {
+  margin: 1em; }
+
+#nav {
+  min-width: 13em;
+  background-color: #84A0FF; }
+
+.nav-spacer {
+  height: 37px;
+  background-color: #5365A4; }
+
+.nav-list a {
+  text-decoration: none; }
+
+.nav-block {
+  position: relative;
+  display: block; }
+
+.nav-item {
+  padding: 1em 0;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  color: #5c72bd;
+  text-align: center;
+  border-left: 6px solid #84A0FF;
+  transition: background 0.3s ease; }
+  .nav-item:hover {
+    background-color: #9FB5FF;
+    border-left: 6px solid #9FB5FF;
+    color: #ffffff; }
+
+.nav-item.active {
+  background-color: #6A86E2;
+  border-left: 6px solid #FFD01D;
+  color: #ffffff; }
+
+.issue-counter {
+  opacity: 1;
+  position: absolute;
+  top: 1.4em;
+  right: 1.1em;
+  z-index: 1;
+  padding: 0.33em;
+  min-width: 1em;
+  min-height: 1em;
+  background-color: #FF4E31;
+  border-radius: 6px;
+  color: white;
+  font-family: 'Fira Mono';
+  text-align: center;
+  line-height: 1.1; }
+
+.block {
+  position: relative;
+  overflow: auto;
+  padding: 1em;
+  background: #ffffff;
+  border: 2px solid #bdbdbd;
+  border-radius: 6px; }
+
+.block-header {
+  font-size: 2em;
+  font-family: 'Brandon Medium';
+  color: #7E7E7E; }
+
+.block h2 {
+  margin: 0; }
+
+#content {
+  width: 100%;
+  display: block; }
+
+.top-stripe {
+  height: 37px;
+  background: #5365A4;
+  margin: 0; }
+
+.hero {
+  font-family: 'Brandon Medium';
+  font-variant: small-caps; }
+
+.button {
+  margin: 16px 16px 0 0;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #84A0FF;
+  border: 2px solid #718ae0;
+  border-radius: 3px;
+  font-size: 1.2em;
+  font-family: 'Brandon Regular';
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white; }
+  .button:hover {
+    background-color: #93acff;
+    border-color: #7e94e3; }
+  .button:focus {
+    outline: none; }
+  .button:active {
+    background-color: #7a98ff;
+    border-color: #6983de; }
+
+.staff-away {
+  min-height: 1em;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  color: #ffffff;
+  margin: 2.2em 0 0 0; }
+
+#staff-away-item {
+  width: 30%;
+  text-align: center;
+  padding: 0.7em;
+  float: left;
+  border-radius: 6px; }
+
+.staff-away .count {
+  font-family: 'Brandon Bold';
+  font-size: 3em; }
+
+.staff-away .away-type {
+  font-family: 'Brandon Medium';
+  font-size: 2em; }
+
+.staff-away .now {
+  background-color: #FFD93B;
+  border: 2px solid #d4ab00; }
+  .staff-away .now .count {
+    color: #7d6500; }
+  .staff-away .now .away-type {
+    color: #bb9600; }
+
+.staff-away .soon {
+  margin: 0 1em;
+  background-color: #0798FF;
+  border: 2px solid #005ea0; }
+  .staff-away .soon .count {
+    color: #003154; }
+  .staff-away .soon .away-type {
+    color: #004f87; }
+
+.staff-away .all-day {
+  background-color: #FF4E31;
+  border: 2px solid #ca1c00; }
+  .staff-away .all-day .count {
+    color: #7e1200; }
+  .staff-away .all-day .away-type {
+    color: #b11900; }
+
+.status {
+  display: flex;
+  flex: 1;
+  justify-content: space-between; }
+
+.edumate-status, .exchange-status {
+  float: left;
+  margin: 1em 0 1em 0; }
+
+.status-item {
+  float: left;
+  width: 100%;
+  margin: 1em 0; }
+
+.status-icon {
+  float: left;
+  margin: 0 1em 0 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px; }
+
+.status-item h2 {
+  margin: 0;
+  font-family: 'Brandon Medium';
+  color: #7E7E7E; }
+
+.status-item h3 {
+  margin: 0;
+  font-family: 'Brandon Light';
+  color: #bdbdbd; }
+
+.unknown {
+  background-color: #e9ebf3; }
+
+.checking {
+  background-color: #FFD93B;
+  border: 2px solid #f3c814;
+  animation: checking 1s infinite; }
+
+.up {
+  background-color: #67DA75;
+  border: 2px solid #4ac459;
+  animation: up 0.3s; }
+
+.down {
+  background-color: #FF4E31;
+  border: 2px solid #f02d0d;
+  animation: down 0.5s infinite; }
+
+#flash {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  margin: 1em 1em 0 0;
+  border-radius: 6px;
+  border-width: 2px;
+  border-style: solid;
+  box-shadow: -8px 8px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1; }
+
+#flash h1 {
+  margin: 0; }
+
+#flash.error {
+  animation: error-flash 0.3s;
+  background-color: #FF4E31;
+  border-color: #b11900;
+  border-top-width: 10px; }
+  #flash.error h1 {
+    color: #971500; }
+
+@keyframes error-flash {
+  0% {
+    opacity: 0;
+    transform: scale(0.8); }
+  
+  50% {
+    opacity: 1;
+    transform: scale(1.1); }
+  
+  100% {
+    transform: scale(1); } }
+
+@keyframes checking {
+  0%, 100% {
+    background-color: #FFD93B; }
+  
+  50% {
+    background-color: #fff7d4;
+    border-color: #ffe888; } }
+
+@keyframes up {
+  0%, 100% {
+    transform: rotateX(0deg); }
+  
+  50% {
+    transform: rotateX(90deg); } }
+
+@keyframes down {
+  0%, 100% {
+    background-color: #FF4E31; }
+  
+  50% {
+    background-color: #ff907e; } }
+
+.issue-counter-transition {
+  transition: all .2s ease; }
+
+.issue-counter-enter, .issue-counter-leave {
+  opacity: 0;
+  transform: scale(0.85); }
+
+.reports-filter {
+  width: 200px;
+  padding: 1.2em;
+  font-size: 1.2em;
+  background-color: rgba(212, 212, 212, 0.33);
+  border: 2px solid #bdbdbd;
+  color: #7E7E7E;
+  border-radius: 6px;
+  line-height: 1em; }
+  .reports-filter:focus {
+    outline: none;
+    background-color: rgba(212, 212, 212, 0.2);
+    border: 2px solid #84A0FF;
+    color: #323c5f; }
+
+.reports-list-empty {
+  padding: 1.5em 0 0 1em;
+  font-family: 'Brandon Light Italics';
+  font-size: 1.4em; }
+
+.reports-flex {
+  width: 100%;
+  position: relative;
+  height: 75%;
+  display: flex;
+  flex-direction: column; }
+
+.reports-list {
+  width: 100%;
+  overflow: auto;
+  position: absolute;
+  flex: 1;
+  margin: 1em 0 0 0;
+  padding: 1em 0 0 0; }
+
+.report-item {
+  margin: 0 0 1em 0;
+  padding: 1em;
+  background-color: #ffffff;
+  border: 2px solid #bdbdbd;
+  border-radius: 6px; }
+
+h2 {
+  margin: 0;
+  font-family: 'Brandon Medium';
+  font-size: 2.2em;
+  color: #525252; }
+
+.report-meta {
+  border-top: 1px dashed #D4D4D4;
+  padding-top: 0.5em;
+  margin: 0.5em 0 0 0;
+  font-size: 1.2em; }
+
+[class^="report-type-"] {
+  float: right;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 4px 9px;
+  font-family: 'Brandon Medium';
+  font-size: 1em;
+  line-height: 1.35;
+  letter-spacing: 1px;
+  color: white;
+  border-radius: 3px;
+  opacity: 0.75; }
+
+.report-type-module {
+  color: #8367DA;
+  border: 2px solid #8367DA;
+  border-top-width: 6px; }
+
+.report-type-correspondence {
+  color: #FF4E31;
+  border: 2px solid #FF4E31;
+  border-top-width: 6px; }
+
+.report-type-job {
+  color: #FFD93B;
+  border: 2px solid #FFD93B;
+  border-top-width: 6px; }
+
+.report-meta .dimmed {
+  color: #bdbdbd; }
+
+.report-meta .arrow {
+  margin: 0 0.12em; }
+
+.report-meta .pipe {
+  color: rgba(212, 212, 212, 0.5); }
+
+.report-meta .emphasis {
+  color: #7E7E7E; }
+
+h3 {
+  margin: 0;
+  font-family: 'Brandon Light';
+  font-size: 1.8em; }
+
+p {
+  margin: 0.3em 0 0 0;
+  font-family: 'Brandon Regular';
+  font-size: 1.4em;
+  line-height: 1.5em; }
