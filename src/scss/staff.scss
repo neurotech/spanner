@@ -1,0 +1,60 @@
+.staff-away {
+  min-height: $spacing-unit;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  color: $block-background;
+  margin: $spacing-unit * 2.2 0 0 0;
+}
+
+#staff-away-item {
+  width: 30%;
+  text-align: center;
+  padding: $spacing-unit * 0.7;
+  float: left;
+  border-radius: $border-radius-unit;
+}
+
+.staff-away .count {
+  font-family: 'Brandon Bold';
+  font-size: $font-size-unit * 3;
+}
+
+.staff-away .away-type {
+  font-family: 'Brandon Medium';
+  font-size: $font-size-unit * 2;
+}
+
+.staff-away .now {
+  background-color: $yellow-base;
+  border: $border-width-unit solid darken($yellow-base, 20%);
+  .count {
+    color: darken($yellow-base, 37%);
+  }
+  .away-type {
+    color: darken($yellow-base, 25%);
+  }
+}
+
+.staff-away .soon {
+  margin: 0 $spacing-unit;
+  background-color: $blue-base;
+  border: $border-width-unit solid darken($blue-base, 20%);
+  .count {
+    color: darken($blue-base, 35%);
+  }
+  .away-type {
+    color: darken($blue-base, 25%);
+  }
+}
+
+.staff-away .all-day {
+  background-color: $red-base;
+  border: $border-width-unit solid darken($red-base, 20%);
+  .count {
+    color: darken($red-base, 35%);
+  }
+  .away-type {
+    color: darken($red-base, 25%);
+  }
+}
