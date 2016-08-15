@@ -132,6 +132,9 @@ body {
   height: 100%;
   position: absolute;
   display: flex;
+  flex-direction: column;
+  flex: 1;
+  display: flex;
   flex-direction: column; }
 
 #flex {
@@ -139,7 +142,9 @@ body {
   display: flex; }
 
 #switcher {
-  margin: 1em; }
+  width: 100%;
+  margin: 1em;
+  overflow: auto; }
 
 #nav {
   min-width: 13em;
@@ -193,6 +198,7 @@ body {
 .block {
   position: relative;
   overflow: auto;
+  margin: 0 1em 0 0;
   padding: 1em;
   background: #ffffff;
   border: 2px solid #bdbdbd;
@@ -208,7 +214,7 @@ body {
 
 #content {
   width: 100%;
-  display: block; }
+  display: flex; }
 
 .top-stripe {
   height: 37px;
@@ -424,11 +430,10 @@ body {
   font-size: 1.4em; }
 
 .reports-flex {
-  width: 100%;
   position: relative;
-  height: 75%;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  margin: 0 1em 0 0; }
 
 .reports-list {
   width: 100%;
@@ -507,3 +512,19 @@ p {
   font-family: 'Brandon Regular';
   font-size: 1.4em;
   line-height: 1.5em; }
+
+::-webkit-scrollbar {
+  width: 0.75em; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: rgba(126, 126, 126, 0.2);
+  border-radius: 10px; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: rgba(126, 126, 126, 0.3); }
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(126, 126, 126, 0.1); }
