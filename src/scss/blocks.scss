@@ -1,6 +1,7 @@
 .block {
   position: relative;
   overflow: auto;
+  margin: 0 $spacing-unit 0 0;
   padding: $spacing-unit;
   background: $block-background;
   border: $border-width-unit solid $block-border;
