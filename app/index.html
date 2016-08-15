@@ -10,7 +10,6 @@
     <div id="app">
       <div id="flex">
         <div id="nav">
-          <div class="nav-spacer"></div>
           <div class="nav-list">
             <a href="#" v-on:click="route('home')" class="nav-block">
               <div class="nav-item {{ currentView === 'home' ? 'active' : '' }}">Home</div>
@@ -35,7 +34,6 @@
           <div id="flash" class="error" v-if="missingConfig != 'OK'">
             <h1>Error: Missing Config Items</h1>
           </div>
-          <header class="top-stripe"></header>
           <div id="switcher">
             <component :is="currentView"></component>
           </div>
