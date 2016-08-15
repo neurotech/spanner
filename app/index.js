@@ -10,15 +10,36 @@ Vue.component('staff', require('./components/staff'));
 
 var app = new Vue({
   el: '#app',
+  mixins: [require('./mixins/fetch-issues')],
   data: {
     currentView: 'home',
     missingConfig: check(),
-    issueCount: 12
+    issueCount: 0,
+    issues: {
+      missingDetentionClasses: [],
+      coCurricularDuplicates: []
+    }
   },
-  created: function () {},
+  created: function () {
+    this.getTotalIssues();
+  },
   methods: {
     route: function (path) {
       this.currentView = path;
+    },
+    getTotalIssues: function () {
+      var total = 0;
+      for (var item in this.issues) {
+        if (this.issues[item].length > 0) {
+          total++;
+        }
+      }
+      this.issueCount = total;
+    }
+  },
+  events: {
+    'issue-counter': function (count) {
+      this.issueCount = count;
     }
   }
 });
