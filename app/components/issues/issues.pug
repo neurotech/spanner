@@ -2,11 +2,5 @@ section.block(v-cloak)
   .block-header Issues
   button.button(v-on:click="fetchAllIssues") Update
 
-  table
-    th Term
-    th Day
-    th Date
-    tr(v-for="issue in issues.missingDetentionClasses")
-      td {{issue.term}}
-      td {{issue.detentionDay}}
-      td {{issue.detentionDate}}
+  div Total Issues: {{issues.length}}
+  div {{issues}}
