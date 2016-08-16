@@ -15,8 +15,8 @@ function createMainWindow () {
     width: 1920 / factor,
     height: 1080 / factor,
     titleBarStyle: 'default',
-    minWidth: 800,
-    minHeight: 500
+    minWidth: 900,
+    minHeight: 600
   });
 
   win.loadURL(`file://${__dirname}/app/index.html`);

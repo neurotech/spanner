@@ -5,10 +5,10 @@
 html, body {
 	padding: 0;
 	margin: 0;
+	background: $base-background;
 }
 
 body {
-	background: $base-background;
 	font-family: 'Brandon Regular';
 	color: $block-text;
 	font-size: $font-size-unit;
