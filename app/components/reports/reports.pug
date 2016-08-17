@@ -2,7 +2,7 @@ section.block(v-cloak)
   button.button(v-on:click="fetchAllReports" v-show="reportName.length > 1") Update
   input(v-model="reportName" placeholder="Search for a report" autofocus).reports-filter
 
-.reports-list-empty(v-show="reportName.length < 1") Use the search box above to search for a report.
+.list-empty(v-show="reportName.length < 1") Use the search box above to search for a report.
 
 .reports-flex
   .reports-list(v-show="reportName.length >= 1")
