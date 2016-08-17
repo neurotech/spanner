@@ -39,6 +39,7 @@
     "moment": "2.14.1",
     "normalize.css": "4.2.0",
     "pug": "2.0.0-beta4",
+    "underscore": "1.8.3",
     "vue": "1.0.26"
   },
   "devDependencies": {
