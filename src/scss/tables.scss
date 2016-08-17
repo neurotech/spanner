@@ -1,0 +1,47 @@
+// Tables
+table, th, td {
+  border: none;
+}
+
+table {
+  width:100%;
+  display: table;
+  border-collapse: collapse;
+  font-family: 'Fira Mono';
+  color: $block-strong;
+
+  &.striped > tbody {
+    > tr:nth-child(odd) {
+      background-color: rgba($block-separator, 0.25);
+    }
+
+    > tr > td {
+      border-radius: 0;
+    }
+  }
+}
+
+thead {
+  font-family: 'Brandon Medium';
+  font-size: $font-size-unit * 1.2;
+  border-bottom: $border-width-unit solid $block-border;
+}
+
+td, th {
+  padding: 12px;
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+td {
+  font-size: $spacing-unit * 0.8;
+}
+
+td pre {
+  margin: 0;
+  font-family: 'Fira Mono';
+  font-size: $spacing-unit;
+  color: $block-text;
+}
