@@ -1,10 +1,35 @@
-.top-stripe {
-  height: 37px;
-  background: $top-stripe-bg;
+#container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+#left-bar {
+  min-width: 13em;
+  flex-direction: row;
+}
+
+#content {
+  //
+}
+
+#stripe {
+  width: 100%;
   margin: 0;
+  background: $top-stripe-bg;
+}
+
+#switcher {
+  //
 }
 
 .hero {
   font-family: 'Brandon Medium';
   font-variant: small-caps;
+}
+
+.list-empty {
+  padding: $spacing-unit * 1.5 0 0 $spacing-unit;
+  font-family: 'Brandon Light Italics';
+  font-size: $font-size-unit * 1.4;
 }
