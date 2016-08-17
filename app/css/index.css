@@ -214,16 +214,31 @@ body {
 
 #content {
   width: 100%;
-  display: flex; }
+  display: flex;
+  flex-direction: row; }
 
-.top-stripe {
-  height: 37px;
-  background: #5365A4;
-  margin: 0; }
+#container {
+  display: flex;
+  flex: 1;
+  flex-direction: column; }
+
+#left-bar {
+  min-width: 13em;
+  flex-direction: row; }
+
+#stripe {
+  width: 100%;
+  margin: 0;
+  background: #5365A4; }
 
 .hero {
   font-family: 'Brandon Medium';
   font-variant: small-caps; }
+
+.list-empty {
+  padding: 1.5em 0 0 1em;
+  font-family: 'Brandon Light Italics';
+  font-size: 1.4em; }
 
 .button {
   margin: 16px 16px 0 0;
@@ -424,11 +439,6 @@ body {
     border: 2px solid #84A0FF;
     color: #323c5f; }
 
-.reports-list-empty {
-  padding: 1.5em 0 0 1em;
-  font-family: 'Brandon Light Italics';
-  font-size: 1.4em; }
-
 .reports-flex {
   position: relative;
   display: flex;
@@ -513,6 +523,61 @@ p {
   font-size: 1.4em;
   line-height: 1.5em; }
 
+.issue-count-sticker {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  margin: 16px 16px 0 0;
+  padding: 0.4em;
+  min-width: 1em;
+  min-height: 1em;
+  background-color: #FF4E31;
+  border-radius: 6px;
+  color: white;
+  text-align: center;
+  line-height: 1; }
+
+.issue-total {
+  font-family: 'Fira Mono';
+  font-size: 2em; }
+
+.issue-subtitle {
+  font-family: 'Brandon Regular';
+  font-size: 0.75em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  letter-spacing: 1px; }
+
+[id^="issues-"] {
+  margin-top: 1em;
+  max-height: 20em;
+  overflow-y: scroll; }
+  [id^="issues-"] .block-header {
+    font-size: 1.75em;
+    font-family: 'Brandon Regular'; }
+
+.th-issue {
+  width: 22%; }
+
+.th-details {
+  width: 28%; }
+
+.th-actual {
+  width: 10%; }
+
+.th-expected {
+  width: 10%; }
+
+.th-fix {
+  width: 30%; }
+
+.td-actual {
+  color: #FF4E31; }
+
+.td-expected {
+  color: #30c542; }
+
 ::-webkit-scrollbar {
   width: 0.75em; }
 
@@ -528,3 +593,38 @@ p {
 
 ::-webkit-scrollbar-thumb:window-inactive {
   background: rgba(126, 126, 126, 0.1); }
+
+table, th, td {
+  border: none; }
+
+table {
+  width: 100%;
+  display: table;
+  border-collapse: collapse;
+  font-family: 'Fira Mono';
+  color: #525252; }
+  table.striped > tbody > tr:nth-child(odd) {
+    background-color: rgba(212, 212, 212, 0.25); }
+  table.striped > tbody > tr > td {
+    border-radius: 0; }
+
+thead {
+  font-family: 'Brandon Medium';
+  font-size: 1.2em;
+  border-bottom: 2px solid #bdbdbd; }
+
+td, th {
+  padding: 12px;
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  border-radius: 2px; }
+
+td {
+  font-size: 0.8em; }
+
+td pre {
+  margin: 0;
+  font-family: 'Fira Mono';
+  font-size: 1em;
+  color: #7E7E7E; }
