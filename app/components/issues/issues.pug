@@ -1,6 +1,24 @@
-section.block(v-cloak)
-  .block-header Issues
-  button.button(v-on:click="fetchAllIssues") Update
+.list-empty(v-if="issueCount === 0") No known issues.
 
-  div Total Issues: {{issues.length}}
-  div {{issues}}
+section(v-for="(index, group) in groupedIssues" id="issues-{{index.toLowerCase()}}" class="block" v-cloak)
+  .issue-count-sticker
+    .issue-total {{group.length}}
+    .issue-subtitle Total
+
+  .block-header {{index}}
+  table.striped
+    thead
+      tr
+        th.th-issue Issue
+        th.th-details Details
+        th.th-actual Actual
+        th.th-expected Expected
+        th.th-fix Fix
+    tbody
+      tr(v-for="item in group | orderBy 'sort'")
+        td.td-issue {{item.issue}}
+        td.td-details {{item.details}}
+        td.td-actual {{item.actual}}
+        td.td-expected {{item.expected}}
+        td.td-fix
+          pre {{item.fix}}
