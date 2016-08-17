@@ -14,7 +14,7 @@ var app = new Vue({
   el: '#app',
   mixins: [require('./mixins/fetch-issues')],
   data: {
-    currentView: 'home',
+    currentView: 'issues',
     missingConfig: check(),
     issueCount: 0
   },
