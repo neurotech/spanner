@@ -1,0 +1,72 @@
+.issue-count-sticker {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  margin: $button-margin-unit $button-margin-unit 0 0;
+  padding: $spacing-unit * 0.4;
+  min-width: $spacing-unit;
+  min-height: $spacing-unit;
+  background-color: $red-base;
+  border-radius: $border-radius-unit;
+  color: $sticker-text;
+  text-align: center;
+  line-height: 1;
+}
+
+.issue-total {
+  font-family: 'Fira Mono';
+  font-size: $spacing-unit * 2;
+}
+
+.issue-subtitle {
+  font-family: 'Brandon Regular';
+  font-size: $spacing-unit * 0.75;
+  text-transform: uppercase;
+  opacity: 0.75;
+  letter-spacing: 1px;
+}
+
+[id^="issues-"] {
+  margin-top: $spacing-unit;
+  max-height: $spacing-unit * 20;
+  overflow-y: scroll;
+  & .block-header {
+    font-size: $spacing-unit * 1.75;
+    font-family: 'Brandon Regular';
+  }
+}
+
+.th-issue {
+  width: 22%;
+}
+
+.th-details {
+  width: 28%;
+}
+
+.th-actual {
+  width: 10%;
+}
+
+.th-expected {
+  width: 10%;
+}
+
+.th-fix {
+  width: 30%;
+}
+
+.td-issue {}
+
+.td-details {}
+
+.td-actual {
+  color: $red-base;
+}
+
+.td-expected {
+  color: darken($green-base, 15%);
+}
+
+.td-fix {}
