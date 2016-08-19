@@ -1,38 +1,73 @@
-.status {
-  display: flex;
-  flex: 1;
-  justify-content: space-between;
-}
-
 .edumate-status, .exchange-status {
+  max-width: $spacing-unit * 12;
   float: left;
-  margin: $spacing-unit 0 $spacing-unit 0;
+  background-color: $block-background;
+  border-radius: $border-radius-unit;
+  text-align: center;
 }
 
-.status-item {
-  float: left;
+@media (min-width: 30em) and (max-width: 65em) {
+  .edumate-status, .exchange-status {
+    max-width: $spacing-unit * 12;
+  }
+}
+
+.edumate-status {
+  border: $border-width-unit solid $blue-base;
+  margin: 0 $spacing-unit 0 0;
+}
+
+.exchange-status {
+  border: $border-width-unit solid $red-base;
+}
+
+.status-header {
   width: 100%;
-  margin: 1em 0;
+  padding: $spacing-unit * 0.5 0;
+  border-radius: 0;
+  color: $block-background;
+  font-size: $font-size-unit * 2;
+  text-align: center;
+}
+
+.edumate-status .status-header {
+  background-color: $blue-base;
+}
+
+.exchange-status .status-header {
+  background-color: $red-base;
+}
+
+.status-items {
+  padding: $spacing-unit;
+  display: inline-block;
+}
+
+.item {
+  width: 100%;
+  &:first-of-type {
+    margin: 0 0 $spacing-unit 0;
+  }
+  &:last-of-type {
+    margin: $spacing-unit 0 0 0;
+  }
 }
 
 .status-icon {
-  float: left;
-  margin: 0 1em 0 0;
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
+  width: $spacing-unit * 6;
+  padding: $spacing-unit * 0.5;
+  border-radius: 4px;
+  font-family: 'Fira Mono';
+  font-size: $font-size-unit * 1.2;
+  text-align: center;
 }
 
-.status-item h2 {
-  margin: 0;
-  font-family: 'Brandon Medium';
-  color: $block-text;
+.edumate-status .status-item h3 {
+  color: desaturate(darken($blue-base, 25%), 20%);
 }
 
-.status-item h3 {
-  margin: 0;
-  font-family: 'Brandon Light';
-  color: $block-subtitle;
+.exchange-status .status-item h3 {
+  color: desaturate(darken($red-base, 25%), 20%);
 }
 
 .unknown {
@@ -41,18 +76,21 @@
 
 .checking {
   background-color: $yellow-base;
-  border: 2px solid desaturate(darken($yellow-base, 10%), 10%);
+  border: 2px solid desaturate(darken($yellow-base, 15%), 10%);
+  color: desaturate(darken($yellow-base, 30%), 10%);
   animation: checking 1s infinite;
 }
 
 .up {
   background-color: $green-base;
-  border: 2px solid desaturate(darken($green-base, 10%), 10%);
+  border: 2px solid desaturate(darken($green-base, 15%), 10%);
+  color: desaturate(darken($green-base, 30%), 10%);
   animation: up 0.3s;
 }
 
 .down {
   background-color: $red-base;
-  border: 2px solid desaturate(darken($red-base, 10%), 10%);
+  border: 2px solid desaturate(darken($red-base, 15%), 10%);
+  color: desaturate(darken($red-base, 30%), 10%);
   animation: down 0.5s infinite;
 }

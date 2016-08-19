@@ -4,7 +4,20 @@
   flex: 1;
   width: 100%;
   color: $block-background;
-  margin: $spacing-unit * 2.2 0 0 0;
+  margin: $spacing-unit 0 0 0;
+  & a {
+    text-decoration: none;
+  }
+}
+
+#staff-away-details {
+  margin: $spacing-unit 0 0 0;
+  th.name {
+    width: 50%;
+  }
+  th.reason {
+    width: 50%;
+  }
 }
 
 #staff-away-item {

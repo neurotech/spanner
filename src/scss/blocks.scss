@@ -1,19 +1,12 @@
-.block {
+#block {
   position: relative;
-  overflow: auto;
-  margin: 0 $spacing-unit 0 0;
   padding: $spacing-unit;
-  background: $block-background;
+  margin: 0 0 $spacing-unit 0;
+  background-color: $block-background;
   border: $border-width-unit solid $block-border;
   border-radius: $border-radius-unit;
 }
 
-.block-header {
-  font-size: $font-size-unit * 2;
-  font-family: 'Brandon Medium';
-  color: $block-header;
-}
-
-.block h2 {
-  margin: 0;
+#block .block-header {
+  font-size: $font-size-unit * 1.5;
 }

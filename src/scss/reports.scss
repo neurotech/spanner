@@ -1,6 +1,7 @@
 .reports-filter {
-  width: 200px;
-  padding: $spacing-unit * 1.2;
+  width: 220px;
+  margin: 0 0 1em 0;
+  padding: $spacing-unit;
   font-size: $font-size-unit * 1.2;
   background-color: rgba($block-separator, 0.33);
   border: 2px solid $block-border;
@@ -9,7 +10,8 @@
   line-height: $font-size-unit;
   &:focus {
     outline: none;
-    background-color: rgba($block-separator, 0.20);
+    // background-color: rgba($block-separator, 0.20);
+    background-color: $block-background;
     border: 2px solid $nav-bg;
     color: $text;
   }
@@ -19,7 +21,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 0 $spacing-unit 0 0;
+  margin: 0;
 }
 
 .reports-list {
@@ -27,8 +29,7 @@
   overflow: auto;
   position: absolute;
   flex: 1;
-  margin: $spacing-unit 0 0 0;
-  padding: $spacing-unit 0 0 0;
+  padding: 0;
 }
 
 .report-item {

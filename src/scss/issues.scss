@@ -27,10 +27,7 @@
   letter-spacing: 1px;
 }
 
-[id^="issues-"] {
-  margin-top: $spacing-unit;
-  max-height: $spacing-unit * 20;
-  overflow-y: scroll;
+[class^="issues-"] {
   & .block-header {
     font-size: $spacing-unit * 1.75;
     font-family: 'Brandon Regular';

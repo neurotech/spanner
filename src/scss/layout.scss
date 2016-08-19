@@ -1,35 +1,190 @@
+[v-cloak] {
+	display: none;
+}
+
+html, body {
+	padding: 0;
+	margin: 0;
+	background: $base-background;
+}
+
+body {
+	font-family: 'Brandon Regular';
+	color: $block-text;
+	font-size: $font-size-unit;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
 #container {
   display: flex;
   flex: 1;
-  flex-direction: column;
 }
 
 #left-bar {
-  min-width: 13em;
-  flex-direction: row;
+  display: flex;
+  min-width: $spacing-unit * 12;
+  flex-direction: column;
+	background-color: $nav-bg;
+}
+
+#left-logo {
+	height: $spacing-unit * 3;
+	padding: 0;
+	background-color: desaturate(darken($nav-active-bg, 15%), 25%);
+	font-family: 'Brandon Bold';
+  font-size: $font-size-unit * 2;
+	font-variant-caps: small-caps;
+  text-align: center;
+	line-height: $spacing-unit * 3;
+	color: $nav-text;
+}
+
+#nav-link {
+  position: relative;
+  display: block;
+	text-decoration: none;
+}
+
+.nav-item {
+	padding: $spacing-unit 0;
+  font-size: $font-size-unit * 1.5;
+  text-transform: uppercase;
+  color: mix($nav-active-bg, $top-stripe-bg, 40%);
+  text-align: center;
+  border-left: $border-radius-unit solid $nav-bg;
+  transition: background 0.3s ease;
+  &:hover {
+    background-color: $nav-hover-bg;
+    border-left: $border-radius-unit solid $nav-hover-bg;
+    color: $nav-active-text;
+  }
+}
+
+.nav-item.active {
+  background-color: $nav-active-bg;
+  border-left: $border-radius-unit solid $nav-active-border;
+  color: $nav-active-text;
+}
+
+#nav-issue-count {
+	opacity: 1;
+  position: absolute;
+  top: 30%;
+  right: 7%;
+  z-index: 1;
+  padding: $spacing-unit * 0.33;
+  min-width: $spacing-unit;
+  min-height: $spacing-unit;
+  background-color: $red-base;
+  border-radius: $border-radius-unit;
+  color: $sticker-text;
+  font-family: 'Fira Mono';
+  text-align: center;
+  line-height: 1.1;
+}
+
+#refresh-container {
+  display: flex;
+  flex: 1;
+}
+
+#refresh-button {
+  text-align: center;
+  flex: 1;
+  margin: auto 0 0 0;
+  padding: $spacing-unit * 0.5;
+	background-color: $nav-bg;
+	color: mix($nav-active-bg, $top-stripe-bg, 40%);
+	text-decoration: none;
+  line-height: 1.5;
+  font-size: $spacing-unit * 1.5;
+  transition: all 0.25s;
+}
+
+#refresh-button:hover {
+	background-color: $nav-hover-bg;
+	color: $nav-active-text;
 }
 
 #content {
-  //
+	width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 #stripe {
-  width: 100%;
-  margin: 0;
-  background: $top-stripe-bg;
+	height: $spacing-unit * 3;
+	padding: $spacing-unit * 1.5 $spacing-unit * 1;
+	background-color: $nav-active-bg;
+	line-height: $spacing-unit * 3;
+}
+
+#stripe .currentView {
+	float:left;
+	margin: 0;
+	font-family: 'Brandon Thin';
+	font-size: $font-size-unit * 2;
+	letter-spacing: $spacing-unit * 0.2;
+	color: $pale-text;
+	text-transform: uppercase;
+}
+
+#stripe .lastUpdated {
+	float: right;
+	font-family: 'Brandon Light';
+	font-size: $font-size-unit * 1.3;
+	color: rgba($pale-text, 0.7);
+	& em {
+		font-family: 'Brandon Regular';
+		font-style: normal;
+		color: rgba($pale-text, 0.9);
+	}
 }
 
 #switcher {
-  //
-}
-
-.hero {
-  font-family: 'Brandon Medium';
-  font-variant: small-caps;
+	flex: 1;
+  margin: $spacing-unit * 0.5;
+  padding: $spacing-unit * 0.5;
+  overflow: auto;
 }
 
 .list-empty {
-  padding: $spacing-unit * 1.5 0 0 $spacing-unit;
+  padding: 0;
   font-family: 'Brandon Light Italics';
   font-size: $font-size-unit * 1.4;
+}
+
+#flash {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: $spacing-unit;
+  margin: $spacing-unit $spacing-unit 0 0;
+  border-radius: $border-radius-unit;
+  border-width: $border-width-unit;
+  border-style: solid;
+  box-shadow: -8px 8px 0 rgba(black, 0.2);
+  z-index: 1;
+}
+
+#flash h1 {
+  margin: 0;
+}
+
+#flash.error {
+  animation: error-flash 0.3s;
+  background-color: $red-base;
+  border-color: darken($red-base, 25%);
+  border-top-width: 10px;
+  h1 {
+    color: darken($red-base, 30%);
+  }
 }
