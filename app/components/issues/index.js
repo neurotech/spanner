@@ -14,7 +14,7 @@ module.exports = {
     };
   },
   created: function () {
-    this.fetchAllIssues();
+    this.fetchAllData();
     this.fetchIssueCount();
     this.$watch('issues', function (newVal, oldVal) {
       var grouped = _.groupBy(newVal, function (list) {
