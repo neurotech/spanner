@@ -1,6 +1,7 @@
 .list-empty(v-if="issueCount === 0") No known issues.
 
-section(v-for="(index, group) in groupedIssues" id="issues-{{index.toLowerCase()}}" class="block" v-cloak)
+section(v-cloak id="block" class="issues-{{index.toLowerCase()}}" v-for="(index, group) in groupedIssues")
+
   .issue-count-sticker
     .issue-total {{group.length}}
     .issue-subtitle Total
