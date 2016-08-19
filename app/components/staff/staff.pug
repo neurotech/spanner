@@ -1,16 +1,25 @@
-section.block(v-cloak).col-50
-  .block-header Staff Away
-  button.button(v-on:click="fetchAllStaffAway") Update
+section.col-50(v-cloak id="block")
+  .block-header Staff away today
 
   div.staff-away
-    div#staff-away-item.now
+    a(href="#" v-on:click="staffAwayDetails = staffAway.now" id="staff-away-item" class="now")
       .count {{staffAway.now.length}}
       .away-type now
 
-    div#staff-away-item.soon
+    a(href="#" v-on:click="staffAwayDetails = staffAway.soon" id="staff-away-item" class="soon")
       .count {{staffAway.soon.length}}
       .away-type soon
 
-    div#staff-away-item.all-day
+    a(href="#" v-on:click="staffAwayDetails = staffAway.allDay" id="staff-away-item" class="all-day")
       .count {{staffAway.allDay.length}}
       .away-type all day
+
+  table(v-if="staffAwayDetails.length > 0")#staff-away-details.striped
+    thead
+      tr
+        th.name Staff Member
+        th.reason Away Reason
+    tbody
+      tr(v-for="item in staffAwayDetails | orderBy 'sortKey'" transition="fader" stagger="10")
+        td {{item.firstname}} {{item.surname}}
+        td {{item.awayReason}}
