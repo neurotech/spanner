@@ -1,5 +1,6 @@
 'use strict';
 const Vue = require('vue');
+const moment = require('moment');
 const config = require('./config');
 const check = require('./check');
 
@@ -15,6 +16,7 @@ var app = new Vue({
   mixins: [require('./mixins/fetch-issues')],
   data: {
     currentView: 'issues',
+    freshness: '',
     missingConfig: check(),
     issueCount: 0
   },
@@ -25,6 +27,15 @@ var app = new Vue({
   methods: {
     route: function (path) {
       this.currentView = path;
+    },
+    lastUpdated: function (raw) {
+      var nice = moment(raw).format(config.get('lastUpdated.format'));
+      return nice;
+    }
+  },
+  events: {
+    'freshness-update': function (dateTime) {
+      this.freshness = dateTime;
     }
   }
 });
