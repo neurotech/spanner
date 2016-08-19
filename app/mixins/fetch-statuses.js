@@ -4,10 +4,10 @@ const fetch = require('../lib/fetch');
 
 module.exports = {
   created: function () {
-    this.fetchAllStatuses();
+    this.fetchAllData();
   },
   methods: {
-    fetchAllStatuses: function () {
+    fetchAllData: function () {
       this.get(config.get('resources.edumate.production'), 'status.edumate.production');
       this.get(config.get('resources.edumate.test'), 'status.edumate.test');
       this.get(config.get('resources.exchange.production'), 'status.exchange.production');

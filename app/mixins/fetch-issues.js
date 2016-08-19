@@ -4,7 +4,7 @@ const fetch = require('../lib/fetch');
 
 module.exports = {
   methods: {
-    fetchAllIssues: function () {
+    fetchAllData: function () {
       this.get(config.get('api') + 'issues', config.get('got'), 'issues');
     },
     fetchIssueCount: function () {
