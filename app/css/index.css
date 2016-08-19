@@ -388,7 +388,11 @@ body {
 
 .staff-away .now {
   background-color: #FFD93B;
-  border: 2px solid #d4ab00; }
+  border: 2px solid #d4ab00;
+  transition: all 0.2s; }
+  .staff-away .now:hover {
+    background-color: #ffe578;
+    border: 2px solid #e9c638; }
   .staff-away .now .count {
     color: #7d6500; }
   .staff-away .now .away-type {
@@ -397,7 +401,11 @@ body {
 .staff-away .soon {
   margin: 0 1em;
   background-color: #0798FF;
-  border: 2px solid #005ea0; }
+  border: 2px solid #005ea0;
+  transition: all 0.2s; }
+  .staff-away .soon:hover {
+    background-color: #54b8ff;
+    border: 2px solid #1578be; }
   .staff-away .soon .count {
     color: #003154; }
   .staff-away .soon .away-type {
@@ -405,7 +413,11 @@ body {
 
 .staff-away .all-day {
   background-color: #FF4E31;
-  border: 2px solid #ca1c00; }
+  border: 2px solid #ca1c00;
+  transition: all 0.25s; }
+  .staff-away .all-day:hover {
+    background-color: #ff755f;
+    border: 2px solid #e24d34; }
   .staff-away .all-day .count {
     color: #7e1200; }
   .staff-away .all-day .away-type {
