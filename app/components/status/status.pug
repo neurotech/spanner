@@ -1,31 +1,20 @@
-section.block.col-50(v-cloak)
-  .block-header Services
-  button.button(v-on:click="fetchAllStatuses") Update
+.edumate-status
+  .status-header Edumate
+  .status-items
+    .item
+      div(class="status-icon {{status.edumate.production}}") Production
 
-  .status
-    .edumate-status.col-50
-      div.status-item
-        div(class="status-icon {{status.edumate.production}}")
-        h2 Edumate
-        h3 Production
+    .item
+      div(class="status-icon {{status.edumate.test}}") Test
 
-      div.status-item
-        div(class="status-icon {{status.edumate.test}}")
-        h2 Edumate
-        h3 Test
+.exchange-status
+  .status-header Exchange
+  .status-items
+    .item
+      div(class="status-icon {{status.exchange.production}}") Production
 
-    .exchange-status.col-50
-      div.status-item
-        div(class="status-icon {{status.exchange.production}}")
-        h2 Exchange
-        h3 Production
+    .item
+      div(class="status-icon {{status.exchange.test}}") Test
 
-      div.status-item
-        div(class="status-icon {{status.exchange.test}}")
-        h2 Exchange
-        h3 Test
-
-      div.status-item
-        div(class="status-icon {{status.exchange.beta}}")
-        h2 Exchange
-        h3 Beta
+    .item
+      div(class="status-icon {{status.exchange.beta}}") Beta
