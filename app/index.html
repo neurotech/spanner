@@ -8,34 +8,39 @@
   </head>
   <body>
     <div id="app">
-      <div id="flex">
-        <div id="nav">
-          <div class="nav-list">
-            <a href="#" v-on:click="route('home')" class="nav-block">
-              <div class="nav-item {{ currentView === 'home' ? 'active' : '' }}">Home</div>
-            </a>
-            <a href="#" v-on:click="route('issues')" class="nav-block">
-              <div class="nav-item {{ currentView === 'issues' ? 'active' : '' }}">Issues</div>
-              <div v-if="issueCount > 0" class="issue-counter" transition="issue-counter">{{issueCount}}</div>
-            </a>
-            <a href="#" v-on:click="route('status')" class="nav-block">
-              <div class="nav-item {{ currentView === 'status' ? 'active' : '' }}">Status</div>
-            </a>
-            <a href="#" v-on:click="route('reports')" class="nav-block">
-              <div class="nav-item {{ currentView === 'reports' ? 'active' : '' }}">Reports</div>
-            </a>
-            <a href="#" v-on:click="route('staff')" class="nav-block">
-              <div class="nav-item {{ currentView === 'staff' ? 'active' : '' }}">Staff</div>
-            </a>
+      <div id="container">
+        <div id="left-bar">
+          <div id="left-logo">Spanner</div>
+          <!-- <a href="#" v-on:click="route('home')" id="nav-link">
+            <div class="nav-item {{ currentView === 'home' ? 'active' : '' }}">Home</div>
+          </a> -->
+          <a href="#" v-on:click="route('issues')" id="nav-link">
+            <div class="nav-item {{ currentView === 'issues' ? 'active' : '' }}">Issues</div>
+            <div v-if="issueCount > 0" id="nav-issue-count" transition="issue-counter">{{issueCount}}</div>
+          </a>
+          <a href="#" v-on:click="route('status')" id="nav-link">
+            <div class="nav-item {{ currentView === 'status' ? 'active' : '' }}">Status</div>
+          </a>
+          <a href="#" v-on:click="route('reports')" id="nav-link">
+            <div class="nav-item {{ currentView === 'reports' ? 'active' : '' }}">Reports</div>
+          </a>
+          <a href="#" v-on:click="route('staff')" id="nav-link">
+            <div class="nav-item {{ currentView === 'staff' ? 'active' : '' }}">Staff</div>
+          </a>
+          <div id="refresh-container">
+            <a href="#" v-on:click="$refs.content.fetchAllData()" id="refresh-button">Refresh</a>
           </div>
         </div>
-
         <div id="content">
           <div id="flash" class="error" v-if="missingConfig != 'OK'">
             <h1>Error: Missing Config Items</h1>
           </div>
+          <div id="stripe">
+            <div class="currentView">{{currentView}}</div>
+            <div class="lastUpdated">Freshness: <em>{{lastUpdated(freshness)}}</em></div>
+          </div>
           <div id="switcher">
-            <component :is="currentView"></component>
+            <component v-ref:content :is="currentView"></component>
           </div>
         </div>
       </div>
