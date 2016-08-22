@@ -62,3 +62,10 @@
   font-family: 'Fira Mono';
   src: url('../fonts/FiraMono-Regular.otf') format('opentype');
 }
+
+@font-face {
+  font-family: 'typicons';
+  src: url("../vendor/typicons.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
