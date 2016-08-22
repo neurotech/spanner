@@ -7,6 +7,10 @@ section(v-cloak id="block" class="issues-{{index.toLowerCase()}}" v-for="(index,
     .issue-subtitle Total
 
   .block-header {{index}}
+    #clipboard
+      div(id="copy-button" class="typcn typcn-clipboard" v-on:click='copyToClipboard(issues)')
+      div(id="clipboard-status" v-if="clipboardStatus.length > 0" transition="clipboard-fader") {{clipboardStatus}} fixes to clipboard.
+
   table.striped
     thead
       tr
@@ -15,6 +19,7 @@ section(v-cloak id="block" class="issues-{{index.toLowerCase()}}" v-for="(index,
         th.th-actual Actual
         th.th-expected Expected
         th.th-fix Fix
+
     tbody
       tr(v-for="item in group | orderBy 'sort'")
         td.td-issue {{item.issue}}
