@@ -4,16 +4,16 @@
   "description": "An application to help keep the bolts tight on your Edumate instance.",
   "main": "index.js",
   "scripts": {
-    "vendor": "cp node_modules/normalize.css/normalize.css app/vendor/normalize.css",
+    "vendor": "cp node_modules/normalize.css/normalize.css app/vendor/normalize.css && cp node_modules/typicons.font/src/font/typicons.woff app/vendor/typicons.woff",
     "watch": "node-sass --watch src/scss/all.scss app/css/index.css",
     "prestart": "npm run build:css && npm run vendor",
     "start": "electron .",
     "prebuild": "npm run build:css && npm run vendor",
     "build:css": "node-sass src/scss/all.scss app/css/index.css",
     "build": "npm run build:macos && npm run build:linux && npm run build:windows",
-    "build:macos": "npm run prebuild && electron-packager . Spanner --overwrite --asar --out=dist --ignore='^src$' --prune --platform=darwin --arch=x64 --app-version=$npm_package_version",
-    "build:linux": "npm run prebuild && electron-packager . Spanner --overwrite --out=dist --ignore='^src$' --prune --platform=linux --arch=x64 --app-version=$npm_package_version",
-    "build:windows": "npm run prebuild && electron-packager . Spanner --overwrite --asar --out=dist --ignore='^src$' --prune --platform=win32 --arch=ia32 --app-version=$npm_package_version"
+    "build:macos": "electron-packager . Spanner --overwrite --asar --out=dist --ignore='^src$' --prune --platform=darwin --arch=x64 --app-version=$npm_package_version",
+    "build:linux": "electron-packager . Spanner --overwrite --out=dist --ignore='^src$' --prune --platform=linux --arch=x64 --app-version=$npm_package_version",
+    "build:windows": "electron-packager . Spanner --overwrite --asar --out=dist --ignore='^src$' --prune --platform=win32 --arch=ia32 --app-version=$npm_package_version"
   },
   "repository": {
     "type": "git",
@@ -39,6 +39,7 @@
     "moment": "2.14.1",
     "normalize.css": "4.2.0",
     "pug": "2.0.0-beta4",
+    "typicons.font": "2.0.8",
     "underscore": "1.8.3",
     "velocity-animate": "1.2.3",
     "vue": "1.0.26"
