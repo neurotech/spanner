@@ -10,25 +10,35 @@
     <div id="app">
       <div id="container">
         <div id="left-bar">
-          <div id="left-logo">Spanner</div>
+          <div id="left-logo">
+            <span class="spanner-icon typcn typcn-spanner-outline"></span>
+          </div>
           <!-- <a href="#" v-on:click="route('home')" id="nav-link">
             <div class="nav-item {{ currentView === 'home' ? 'active' : '' }}">Home</div>
           </a> -->
-          <a href="#" v-on:click="route('issues')" id="nav-link">
-            <div class="nav-item {{ currentView === 'issues' ? 'active' : '' }}">Issues</div>
-            <div v-if="issueCount > 0" id="nav-issue-count" transition="issue-counter">{{issueCount}}</div>
+          <a href="#" v-on:click="route('issues')" id="nav-link" class="{{ currentView === 'issues' ? 'active' : '' }}">
+            <div class="nav-link-icon {{ currentView === 'issues' ? 'active' : '' }}">
+              <span class="typcn typcn-warning-outline"></span>
+            </div>
+            <div v-if="issueCount > 0" id="nav-issue-count" class="{{ currentView === 'issues' ? 'active' : '' }}" transition="issue-counter">{{issueCount}}</div>
           </a>
           <a href="#" v-on:click="route('status')" id="nav-link">
-            <div class="nav-item {{ currentView === 'status' ? 'active' : '' }}">Status</div>
+            <div class="nav-link-icon {{ currentView === 'status' ? 'active' : '' }}">
+              <span class="typcn typcn-bell"></span>
+            </div>
           </a>
           <a href="#" v-on:click="route('reports')" id="nav-link">
-            <div class="nav-item {{ currentView === 'reports' ? 'active' : '' }}">Reports</div>
+            <div class="nav-link-icon {{ currentView === 'reports' ? 'active' : '' }}">
+              <span class="typcn typcn-book"></span>
+            </div>
           </a>
           <a href="#" v-on:click="route('staff')" id="nav-link">
-            <div class="nav-item {{ currentView === 'staff' ? 'active' : '' }}">Staff</div>
+            <div class="nav-link-icon {{ currentView === 'staff' ? 'active' : '' }}">
+              <span class="typcn typcn-group-outline"></span>
+            </div>
           </a>
           <div id="refresh-container">
-            <a href="#" v-on:click="$refs.content.fetchAllData()" id="refresh-button">Refresh</a>
+            <a href="#" v-on:click="$refs.content.fetchAllData()" id="refresh-button"><span class="typcn typcn-refresh-outline"></span></a>
           </div>
         </div>
         <div id="content">
@@ -37,7 +47,7 @@
           </div>
           <div id="stripe">
             <div class="currentView">{{currentView}}</div>
-            <div class="lastUpdated">Freshness: <em>{{lastUpdated(freshness)}}</em></div>
+            <div class="lastUpdated" v-if="freshness.length > 0">Freshness: <em>{{lastUpdated(freshness)}}</em></div>
           </div>
           <div id="switcher">
             <component v-ref:content :is="currentView"></component>
