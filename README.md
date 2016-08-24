@@ -4,8 +4,6 @@
 
 ## To do
 
- - Refactor 'issues'. Needs a heavy rethink
-
 ## Acknowledgments
 
 spanner was inspired by..
