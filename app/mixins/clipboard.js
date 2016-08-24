@@ -6,11 +6,12 @@ module.exports = {
     copyToClipboard: function (payload) {
       this.clipboardStatus = 'Copied';
       if (payload.length > 0) {
-        // TODO: If array and length > 0, take the value for each `fix` key and make into a buffer with line breaks, then copy to clipboard.
-        // i.e. "RazorSQL-friendly" text
-        clipboard.writeText(payload[0].fix);
+        var fixes = payload.map(function (item) {
+          return item['fix'];
+        });
+        clipboard.writeText(fixes.join('\n'));
       }
-      setTimeout(this.clearClipboardStatus, 2000);
+      setTimeout(this.clearClipboardStatus, 2500);
     },
     clearClipboardStatus: function () {
       this.clipboardStatus = '';
