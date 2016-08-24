@@ -18,6 +18,12 @@ table {
     > tr > td {
       border-radius: 0;
     }
+
+    > tr:hover {
+      transition: all 0.15s;
+      background-color: rgba($nav-active-border, 0.2);
+      transform: scale(1.01);
+    }
   }
 }
 
