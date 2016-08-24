@@ -8,7 +8,8 @@ module.exports = {
   template: pug.renderFile(path.join(__dirname, 'issues.pug')),
   mixins: [
     require('../../mixins/fetch-issues'),
-    require('../../mixins/clipboard')
+    require('../../mixins/clipboard'),
+    require('../../mixins/jiggle')
   ],
   data: function () {
     return {
@@ -19,7 +20,8 @@ module.exports = {
     };
   },
   created: function () {
-    setInterval(this.fetchAllData(), config.get('cycles.everyMinute'));
+    this.fetchAllData();
+    this.fetchLoop = setInterval(this.fetchAllData, config.get('cycles.everyMinute'));
     this.fetchIssueCount();
     this.$watch('issues', function (newVal, oldVal) {
       var grouped = _.groupBy(newVal, function (list) {
@@ -28,5 +30,8 @@ module.exports = {
       });
       this.groupedIssues = grouped;
     });
+  },
+  beforeDestroy: function () {
+    clearInterval(this.fetchLoop);
   }
 };
