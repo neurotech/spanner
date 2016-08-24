@@ -9,7 +9,7 @@ section(v-cloak id="block" class="issues-{{index.toLowerCase()}}" v-for="(index,
   .block-header {{index}}
     #clipboard
       div(id="copy-button" class="typcn typcn-clipboard" v-on:click='copyToClipboard(issues)')
-      div(id="clipboard-status" v-if="clipboardStatus.length > 0" transition="clipboard-fader") {{clipboardStatus}} fixes to clipboard.
+      div(id="clipboard-status" v-if="clipboardStatus.length > 0" transition="clipboard-fader") {{{jiggle(clipboardStatus + '!', 50)}}}
 
   table.striped
     thead
