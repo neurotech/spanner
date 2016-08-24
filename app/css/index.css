@@ -1198,6 +1198,24 @@
   opacity: 0;
   transform: scale(0.85); }
 
+@keyframes jiggle {
+  from {
+    transform: translate3d(0, 1px, 0); }
+  to {
+    transform: translate3d(0, -1px, 0); } }
+
+@keyframes rainbow {
+  0% {
+    color: #8367DA; }
+  25% {
+    color: #FF4E31; }
+  50% {
+    color: #FFD93B; }
+  75% {
+    color: #67DA75; }
+  100% {
+    color: #0798FF; } }
+
 [v-cloak] {
   display: none; }
 
@@ -1210,6 +1228,9 @@ body {
   font-family: 'Brandon Regular';
   color: #7E7E7E;
   font-size: 1em; }
+
+::selection {
+  background: rgba(132, 160, 255, 0.5); }
 
 #app {
   width: 100%;
@@ -1225,9 +1246,10 @@ body {
 
 #left-bar {
   display: flex;
-  min-width: 12em;
+  min-width: 6em;
   flex-direction: column;
-  background-color: #84A0FF; }
+  background-color: #84A0FF;
+  transition: min-width 0.2s; }
 
 #left-logo {
   height: 3em;
@@ -1240,44 +1262,58 @@ body {
   line-height: 3em;
   color: rgba(255, 255, 255, 0.88); }
 
+.spanner-icon {
+  width: 100%;
+  font-size: 1.5em;
+  color: #34457f;
+  transition: all 0.3s ease; }
+
 #nav-link {
   position: relative;
   display: block;
   text-decoration: none; }
 
-.nav-item {
-  padding: 1em 0;
-  font-size: 1.5em;
-  text-transform: uppercase;
-  color: #5c72bd;
+.nav-link-icon {
+  padding: 0.3em 0;
+  font-size: 3em;
   text-align: center;
   border-left: 6px solid #84A0FF;
-  transition: background 0.3s ease; }
-  .nav-item:hover {
+  transition: background 0.3s ease;
+  color: #5c72bd;
+  transition: all 0.3s ease; }
+  .nav-link-icon:hover {
     background-color: #9FB5FF;
     border-left: 6px solid #9FB5FF;
     color: #ffffff; }
-
-.nav-item.active {
-  background-color: #6A86E2;
-  border-left: 6px solid #FFD01D;
-  color: #ffffff; }
+  .nav-link-icon.active {
+    background-color: #6A86E2;
+    border-left: 6px solid #FFD01D;
+    color: #ffffff; }
 
 #nav-issue-count {
   opacity: 1;
   position: absolute;
-  top: 30%;
+  top: 25%;
   right: 7%;
   z-index: 1;
   padding: 0.33em;
   min-width: 1em;
   min-height: 1em;
   background-color: #FF4E31;
+  border: 3px solid #84A0FF;
   border-radius: 6px;
   color: white;
   font-family: 'Fira Mono';
   text-align: center;
   line-height: 1.1; }
+  #nav-issue-count.active {
+    border-color: #6A86E2; }
+
+#nav-link.active:hover #nav-issue-count {
+  border-color: #6A86E2; }
+
+#nav-link:hover #nav-issue-count {
+  border-color: #9FB5FF; }
 
 #refresh-container {
   display: flex;
@@ -1287,12 +1323,12 @@ body {
   text-align: center;
   flex: 1;
   margin: auto 0 0 0;
-  padding: 0.5em;
+  padding: 0.25em 0.5em;
   background-color: #84A0FF;
   color: #5c72bd;
   text-decoration: none;
-  line-height: 1.5;
-  font-size: 1.5em;
+  line-height: 1;
+  font-size: 3em;
   transition: all 0.25s; }
 
 #refresh-button:hover {
@@ -1309,6 +1345,20 @@ body {
   padding: 1.5em 1em;
   background-color: #6A86E2;
   line-height: 3em; }
+
+#stripe #hamburger {
+  float: left;
+  margin: 0 0.5em 0 0;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.7em;
+  line-height: 1.7em;
+  transform: rotate(0deg);
+  transition: all 0.2s ease-in-out; }
+  #stripe #hamburger:hover {
+    color: white; }
+  #stripe #hamburger.narrow {
+    transform: rotate(-90deg); }
 
 #stripe .currentView {
   float: left;
@@ -1400,22 +1450,34 @@ body {
 #clipboard {
   display: inline-flex;
   margin: 0 0 0 0.33em;
+  transition: color 0.15s ease-in-out;
   color: #525252; }
+  #clipboard:hover {
+    color: rgba(82, 82, 82, 0.75); }
+  #clipboard:active {
+    color: rgba(82, 82, 82, 0.9); }
 
 #copy-button {
   cursor: pointer; }
 
 #clipboard-status {
-  margin: 0 0 0 0.33em;
+  margin: 0;
   padding: 0.2em 0.4em;
-  border-radius: 3px 6px 6px 3px;
-  border: 2px solid #67DA75;
-  background-color: rgba(103, 218, 117, 0.2);
-  border-left-width: 8px;
-  color: #50be5d;
+  color: #656565;
   font-family: 'Fira Mono';
   font-size: 0.6em;
-  line-height: 1.2em; }
+  line-height: 1.5em; }
+
+#clipboard-status #jiggle {
+  white-space: pre;
+  display: inline-block;
+  color: #84A0FF;
+  animation-name: jiggle, rainbow;
+  animation-duration: 300ms, 800ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: both; }
 
 .staff-away {
   min-height: 1em;
@@ -1743,6 +1805,10 @@ table {
     background-color: rgba(212, 212, 212, 0.25); }
   table.striped > tbody > tr > td {
     border-radius: 0; }
+  table.striped > tbody > tr:hover {
+    transition: all 0.15s;
+    background-color: rgba(255, 208, 29, 0.2);
+    transform: scale(1.01); }
 
 thead {
   font-family: 'Brandon Medium';
