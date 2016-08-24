@@ -14,6 +14,10 @@ body {
 	font-size: $font-size-unit;
 }
 
+::selection {
+  background: rgba($nav-bg, 0.5);
+}
+
 #app {
   width: 100%;
   height: 100%;
@@ -30,9 +34,10 @@ body {
 
 #left-bar {
   display: flex;
-  min-width: $spacing-unit * 12;
+  min-width: $spacing-unit * 6;
   flex-direction: column;
 	background-color: $nav-bg;
+	transition: min-width 0.2s;
 }
 
 #left-logo {
@@ -47,48 +52,66 @@ body {
 	color: $nav-text;
 }
 
+.spanner-icon {
+	width: 100%;
+  font-size: 1.5em;
+  color: desaturate(darken($nav-active-bg, 30%), 25%);
+  transition: all 0.3s ease;
+}
+
 #nav-link {
   position: relative;
   display: block;
 	text-decoration: none;
 }
 
-.nav-item {
-	padding: $spacing-unit 0;
-  font-size: $font-size-unit * 1.5;
-  text-transform: uppercase;
-  color: mix($nav-active-bg, $top-stripe-bg, 40%);
+.nav-link-icon {
+	padding: $spacing-unit * 0.3 0;
+  font-size: $font-size-unit * 3;
   text-align: center;
   border-left: $border-radius-unit solid $nav-bg;
   transition: background 0.3s ease;
-  &:hover {
+	color: mix($nav-active-bg, $top-stripe-bg, 40%);
+	transition: all 0.3s ease;
+	&:hover {
     background-color: $nav-hover-bg;
     border-left: $border-radius-unit solid $nav-hover-bg;
     color: $nav-active-text;
-  }
-}
-
-.nav-item.active {
-  background-color: $nav-active-bg;
-  border-left: $border-radius-unit solid $nav-active-border;
-  color: $nav-active-text;
+	}
+	&.active {
+	  background-color: $nav-active-bg;
+	  border-left: $border-radius-unit solid $nav-active-border;
+	  color: $nav-active-text;
+	}
 }
 
 #nav-issue-count {
 	opacity: 1;
   position: absolute;
-  top: 30%;
+  top: 25%;
   right: 7%;
   z-index: 1;
   padding: $spacing-unit * 0.33;
   min-width: $spacing-unit;
   min-height: $spacing-unit;
   background-color: $red-base;
+	border: $border-width-unit + 1 solid $nav-bg;
   border-radius: $border-radius-unit;
   color: $sticker-text;
   font-family: 'Fira Mono';
   text-align: center;
   line-height: 1.1;
+	&.active {
+		border-color: $nav-active-bg;
+	}
+}
+
+#nav-link.active:hover #nav-issue-count {
+	border-color: $nav-active-bg;
+}
+
+#nav-link:hover #nav-issue-count {
+	border-color: $nav-hover-bg;
 }
 
 #refresh-container {
@@ -100,12 +123,12 @@ body {
   text-align: center;
   flex: 1;
   margin: auto 0 0 0;
-  padding: $spacing-unit * 0.5;
+  padding: $spacing-unit * 0.25 $spacing-unit * 0.5;
 	background-color: $nav-bg;
 	color: mix($nav-active-bg, $top-stripe-bg, 40%);
 	text-decoration: none;
-  line-height: 1.5;
-  font-size: $spacing-unit * 1.5;
+  line-height: 1;
+  font-size: $spacing-unit * 3;
   transition: all 0.25s;
 }
 
