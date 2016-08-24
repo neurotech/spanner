@@ -31,7 +31,14 @@
 #clipboard {
   display: inline-flex;
   margin: 0 0 0 $spacing-unit * 0.33;
+  transition: color 0.15s ease-in-out;
   color: $block-strong;
+  &:hover {
+    color: rgba($block-strong, 0.75);
+  }
+  &:active {
+    color: rgba($block-strong, 0.9);
+  }
 }
 
 #copy-button {
@@ -39,14 +46,22 @@
 }
 
 #clipboard-status {
-  margin: 0 0 0 $spacing-unit * 0.33;
+  margin: 0;
   padding: $spacing-unit * 0.2 $spacing-unit * 0.4;
-  border-radius: $border-radius-unit * 0.5 $border-radius-unit $border-radius-unit $border-radius-unit * 0.5;
-  border: $border-width-unit solid $green-base;
-  background-color: rgba($green-base, 0.2);
-  border-left-width: $border-width-unit * 4;
-  color: desaturate(darken($green-base, 10%), 15%);
+  color: desaturate(darken(rgba($block-text, 1), 10%), 15%);
   font-family: 'Fira Mono';
   font-size: $font-size-unit * 0.6;
-  line-height: $font-size-unit * 1.2;
+  line-height: $font-size-unit * 1.5;
+}
+
+#clipboard-status #jiggle {
+  white-space: pre;
+  display: inline-block;
+  color: $nav-bg;
+  animation-name: jiggle, rainbow;
+  animation-duration: 300ms, 800ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: both;
 }
