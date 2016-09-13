@@ -1,6 +1,6 @@
 'use strict';
 const Vue = require('vue');
-const moment = require('moment');
+const human = require('human-time');
 const config = require('./config');
 const check = require('./check');
 
@@ -17,26 +17,37 @@ var app = new Vue({
   data: {
     currentView: 'issues',
     freshness: '',
+    lastUpdatedAt: '',
     missingConfig: check(),
     issueCount: 0
   },
   created: function () {
     this.fetchIssueCount();
+    this.updateLastUpdated();
     setInterval(this.fetchIssueCount, config.get('cycles.everyMinute'));
+    setInterval(this.updateLastUpdated, config.get('cycles.everySecond') * 3);
   },
   methods: {
     route: function (path) {
       this.currentView = path;
     },
     lastUpdated: function (raw) {
-      var nice = moment(raw).format(config.get('lastUpdated.format'));
-      return nice;
+      var ago = human(new Date(raw));
+      return ago;
+    },
+    updateLastUpdated: function () {
+      if (this.freshness.length > 0) {
+        this.lastUpdatedAt = this.lastUpdated(this.freshness);
+      }
     }
   },
   events: {
     'freshness-update': function (dateTime) {
       this.freshness = dateTime;
     }
+  },
+  transitions: {
+    'fader': require('./transitions/fader')
   }
 });
 
