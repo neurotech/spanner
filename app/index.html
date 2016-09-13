@@ -47,7 +47,7 @@
           </div>
           <div id="stripe">
             <div class="currentView">{{currentView}}</div>
-            <div class="lastUpdated" v-if="freshness.length > 0">Freshness: <em>{{lastUpdated(freshness)}}</em></div>
+            <div class="lastUpdated" v-if="lastUpdatedAt.length > 0" transition="fader">Freshness: <em>{{lastUpdatedAt}}</em></div>
           </div>
           <div id="switcher">
             <component v-ref:content :is="currentView"></component>
