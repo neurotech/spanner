@@ -4,6 +4,8 @@
 
 ## To do
 
+ - Refactor clipboard-status to invoke an alert top-middle
+
 ## Acknowledgments
 
 spanner was inspired by..
