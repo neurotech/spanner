@@ -1346,20 +1346,6 @@ body {
   background-color: #6A86E2;
   line-height: 3em; }
 
-#stripe #hamburger {
-  float: left;
-  margin: 0 0.5em 0 0;
-  cursor: pointer;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 1.7em;
-  line-height: 1.7em;
-  transform: rotate(0deg);
-  transition: all 0.2s ease-in-out; }
-  #stripe #hamburger:hover {
-    color: white; }
-  #stripe #hamburger.narrow {
-    transform: rotate(-90deg); }
-
 #stripe .currentView {
   float: left;
   margin: 0;
