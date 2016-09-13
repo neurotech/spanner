@@ -35,11 +35,11 @@
     "electron-debug": "1.0.1",
     "electron-packager": "7.7.0",
     "got": "6.3.0",
-    "moment": "2.14.1",
+    "human-time": "0.0.1",
+    "lodash.groupby": "4.6.0",
     "normalize.css": "4.2.0",
     "pug": "2.0.0-beta4",
     "typicons.font": "2.0.8",
-    "underscore": "1.8.3",
     "velocity-animate": "1.2.3",
     "vue": "1.0.26"
   },

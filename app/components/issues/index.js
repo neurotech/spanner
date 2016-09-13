@@ -1,7 +1,7 @@
 'use strict';
 const path = require('path');
 const pug = require('pug');
-const _ = require('underscore');
+const groupBy = require('lodash.groupby');
 const config = require('../../config');
 
 module.exports = {
@@ -24,7 +24,7 @@ module.exports = {
     this.fetchLoop = setInterval(this.fetchAllData, config.get('cycles.everyMinute'));
     this.fetchIssueCount();
     this.$watch('issues', function (newVal, oldVal) {
-      var grouped = _.groupBy(newVal, function (list) {
+      var grouped = groupBy(newVal, function (list) {
         var chunk = list.category;
         return chunk;
       });
