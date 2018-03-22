@@ -38,7 +38,7 @@
     "human-time": "0.0.1",
     "lodash.groupby": "4.6.0",
     "normalize.css": "4.2.0",
-    "pug": "2.0.0-beta4",
+    "pug": "2.0.0",
     "typicons.font": "2.0.8",
     "velocity-animate": "1.2.3",
     "vue": "2.4.3"
